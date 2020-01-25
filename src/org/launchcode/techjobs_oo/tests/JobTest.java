@@ -57,11 +57,11 @@ public class JobTest {
 
     @Test
     public void testJobToStringWithNullFields() {
-        Job job1 = new Job("Product tester", null, new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job1 = new Job("Product tester", null, new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String expectedString = "\n" + "ID: " + job1.getId() + "\n" +
                 "Name: " + job1.getName() + "\n" +
                 "Employer: " + "Data not available" + "\n" +
-                "Location: " + job1.getLocation().getValue() + "\n" +
+                "Location: " + "Data not available" + "\n" +
                 "Position Type: " + job1.getPositionType().getValue() + "\n" +
                 "Core Competency: " + job1.getCoreCompetency().getValue() + "\n";
         assertEquals(expectedString, job1.toString());

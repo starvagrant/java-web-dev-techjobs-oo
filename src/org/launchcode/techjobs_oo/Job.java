@@ -90,11 +90,11 @@ public class Job {
                 && location == null && positionType == null
                 && positionType == null) return "OOPS! This job does not seem to exist.";
         String nullString = "Data not available";
-        String nameString = name != null ? getName() : nullString;
-        String employerString = employer != null ? getEmployer().getValue() : nullString;
-        String locationString = location != null ? getLocation().getValue() : nullString;
-        String positionString = positionType != null ? getPositionType().getValue() : nullString;
-        String competencyString = coreCompetency != null ? getCoreCompetency().getValue() : nullString;
+        String nameString = (name != null && name !="") ? getName() : nullString;
+        String employerString = (employer != null && employer.getValue() !="") ? getEmployer().getValue() : nullString;
+        String locationString = (location != null && location.getValue() !="") ? getLocation().getValue() : nullString;
+        String positionString = (positionType != null && positionType.getValue() !="") ? getPositionType().getValue() : nullString;
+        String competencyString = (coreCompetency != null && coreCompetency.getValue() !="") ? getCoreCompetency().getValue() : nullString;
         String jobString = "\n" +
                 "ID: " + getId() + "\n" +
                 "Name: " + nameString + "\n" +
