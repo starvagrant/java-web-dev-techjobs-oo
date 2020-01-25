@@ -36,4 +36,43 @@ public class JobTest {
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(job1.equals(job2));
     }
+
+    @Test
+    public void testJobToStringBounds() {
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expectedStringBounds = "\n\n";
+        int stringLength = job1.toString().length();
+        String actualStringBounds = job1.toString().substring(0,1) + job1.toString().substring(stringLength -1, stringLength);
+        assertEquals(expectedStringBounds, actualStringBounds);
+    }
+
+    @Test
+    public void testJobToStringAllFields() {
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expectedString = "\n" + "ID: " + job1.getId() + "\n" +
+            "Name: " + job1.getName() + "\n" +
+            "Employer: " + job1.getEmployer().getValue() + "\n" +
+            "Location: " + job1.getLocation().getValue() + "\n" +
+            "Position Type: " + job1.getPositionType().getValue() + "\n" +
+            "Core Competency" + job1.getCoreCompetency().getValue() + "\n";
+        assertEquals(expectedString, job1.toString());
+    }
+
+    @Test
+    public void testJobToStringWithNullFields() {
+        Job job1 = new Job("Product tester", null, new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String expectedString = "\n" + "ID: " + job1.getId() + "\n" +
+                "Name: " + job1.getName() + "\n" +
+                "Employer: " + "Data not available" + "\n" +
+                "Location: " + job1.getLocation().getValue() + "\n" +
+                "Position Type: " + job1.getPositionType().getValue() + "\n" +
+                "Core Competency" + job1.getCoreCompetency().getValue() + "\n";
+        assertEquals(expectedString, job1.toString());
+    }
+
+    @Test
+    public void testNonExistingJob() {
+        Job job = new Job();
+        assertEquals("OOPS! This job does not seem to exist.", job.toString());
+    }
 }
