@@ -101,7 +101,7 @@ public class Job {
                 "Employer: " + employerString + "\n" +
                 "Location: " + locationString + "\n" +
                 "Position Type: " + positionString + "\n" +
-                "Core Competency" + competencyString + "\n";
+                "Core Competency: " + competencyString + "\n";
         return jobString;
     }
 }
