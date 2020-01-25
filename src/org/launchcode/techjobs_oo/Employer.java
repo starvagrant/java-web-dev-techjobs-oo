@@ -15,10 +15,8 @@ public class Employer extends JobField {
         this.value = value;
     }
 
-    // Custom equals, and hashCode methods:
-
     @Override
-    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Employer)) return false;
         Employer employer = (Employer) o;

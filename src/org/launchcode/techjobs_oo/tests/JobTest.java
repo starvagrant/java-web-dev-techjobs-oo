@@ -2,9 +2,6 @@ package org.launchcode.techjobs_oo.tests;
 
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
-
-import javax.swing.text.Position;
-
 import static org.junit.Assert.*;
 
 public class JobTest {
