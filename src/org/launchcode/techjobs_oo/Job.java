@@ -24,6 +24,7 @@ public class Job {
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
     }
 
     @Override
