@@ -1,6 +1,6 @@
 package org.launchcode.techjobs_oo;
 
-public class JobField {
+abstract public class JobField {
     protected int id;
     protected String value;
 
